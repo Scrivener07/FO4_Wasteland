@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+		{
+			"name": "GitHub",
+			"path": "E:\\Lab\\Bethesda\\FO4\\Wasteland\\Repository"
+		},
+		{
+			"name": "My Games",
+			"path": "C:\\Users\\Scrivener07\\Documents\\My Games\\Fallout4"
+		},
+		{
+			"name": "Project",
+			"path": "."
+		},
+		{
+			"name": "F4SE",
+			"path": "D:\\Games\\Steam\\SteamApps\\common\\Fallout 4\\Data\\F4SE\\UserWasteland"
+		},
+		{
+			"name": "Flash",
+			"path": "D:\\Games\\Steam\\SteamApps\\common\\Fallout 4\\Data\\Interface\\Source\\UserWasteland"
+		},
+		{
+			"name": "Papyrus",
+			"path": "D:\\Games\\Steam\\SteamApps\\common\\Fallout 4\\Data\\Scripts\\Source\\UserWasteland"
+		}
+	]
+}
