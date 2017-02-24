@@ -1,7 +1,7 @@
 Scriptname Wasteland:Overlays:Modification extends Quest
-import Wasteland:Library:Common
-import Wasteland:Library:Log
-
+import Shared:Compatibility
+import Shared:Log
+import Shared:Papyrus
 
 ; Meta
 ;---------------------------------------------
@@ -26,7 +26,7 @@ EndFunction
 
 Version Function GetVersion() Global
 	Version current = new Version
-	current.DeveloperOnly = true
+	current.Distribution = false
 	current.Major = 0
 	current.Minor = 0
 	current.Build = 1

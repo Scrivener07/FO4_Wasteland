@@ -1,8 +1,8 @@
 Scriptname Wasteland:Character:Skills:Client extends Quest Hidden
 import Wasteland:Character
 import Wasteland:Character:Modification
-import Wasteland:Library:Common
-import Wasteland:Library:Log
+import Shared:Papyrus
+import Shared:Log
 
 ; Variables
 ;---------------------------------------------
@@ -32,11 +32,11 @@ Event OnInit()
 	CustomSkill custom = Create(new CustomSkill)
 	If (custom)
 		If (StringIsNoneOrEmpty(custom.Name))
-			WriteError(Log, "The skill name cannot be none or empty.")
+			WriteLine(Log, "The skill name cannot be none or empty.")
 			custom.Name = NameDefault
 		EndIf
 		If (StringIsNoneOrEmpty(custom.Description))
-			WriteError(Log, "The skill description cannot be none or empty.")
+			WriteLine(Log, "The skill description cannot be none or empty.")
 			custom.Description = DescriptionDefault
 		EndIf
 
@@ -49,7 +49,7 @@ Event OnInit()
 
 		Skill = custom
 	Else
-		WriteError(Log, "The custom skill provided was none.")
+		WriteLine(Log, "The custom skill provided was none.")
 	EndIf
 
 	Wasteland:Character:Modification wcm = Modification()
@@ -58,7 +58,7 @@ Event OnInit()
 		RegisterForCustomEvent(wcm.Skills, "ResetEvent")
 		RegisterForCustomEvent(wcm.Skills, "ShutdownEvent")
 	Else
-		WriteError(Log, "The skill client could not get an instance for skill system script.")
+		WriteLine(Log, "The skill client could not get an instance for skill system script.")
 	EndIf
 EndEvent
 
@@ -73,7 +73,7 @@ Event Wasteland:Character:Skills:System.ReadyEvent(Skills:System akSender, var[]
 		AdvanceSkill(0)
 		OnSystemStartup()
 	Else
-		WriteError(Log, "The client could not register on the skill system.")
+		WriteLine(Log, "The client could not register on the skill system.")
 	EndIf
 EndEvent
 
@@ -143,7 +143,7 @@ EndFunction
 
 
 CustomSkill Function Create(CustomSkill aSkill)
-	WriteError(Log, "The client has not implemented the required Create method.")
+	WriteLine(Log, "The client has not implemented the required Create method.")
 	return none
 EndFunction
 

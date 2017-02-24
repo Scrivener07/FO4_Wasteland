@@ -1,7 +1,7 @@
 Scriptname Wasteland:Character:Skills:Data:Exploration extends Wasteland:Character:Skills:Client
 import Wasteland:Character:Modification
 import Wasteland:Character:Skills
-import Wasteland:Library:Log
+import Shared:Log
 ; http://www.creationkit.com/fallout4/index.php?title=OnLocationChange_-_Actor
 ; http://www.creationkit.com/fallout4/index.php?title=List_Of_Tracked_Stats
 

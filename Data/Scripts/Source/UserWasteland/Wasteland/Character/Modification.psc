@@ -1,8 +1,8 @@
 Scriptname Wasteland:Character:Modification extends Quest
+import Shared:Compatibility
+import Shared:Log
+import Shared:Papyrus
 import Wasteland:Character:Skills
-import Wasteland:Library:Common
-import Wasteland:Library:Log
-
 
 Group Components
 	System Property Skills Auto Const Mandatory
@@ -32,7 +32,7 @@ EndFunction
 
 Version Function GetVersion() Global
 	Version current = new Version
-	current.DeveloperOnly = true
+	current.Distribution = false
 	current.Major = 0
 	current.Minor = 0
 	current.Build = 1

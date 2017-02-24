@@ -1,7 +1,7 @@
 Scriptname Wasteland:Character:Skills:Data:Leadership extends Wasteland:Character:Skills:Client
 import Wasteland:Character:Modification
 import Wasteland:Character:Skills
-import Wasteland:Library:Log
+import Shared:Log
 
 
 UserLog Log

@@ -1,7 +1,7 @@
 Scriptname Wasteland:Character:Skills:Display:SkillProgram extends ObjectReference
 import Wasteland:Character:Modification
 import Wasteland:Character:Skills:System
-import Wasteland:Library:Log
+import Shared:Log
 
 ; http://www.creationkit.com/fallout4/index.php?title=Text_Replacement
 ; http://www.creationkit.com/fallout4/index.php?title=AddTextReplacementData_-_ObjectReference
@@ -65,7 +65,7 @@ EndEvent
 
 string Function DataString(Wasteland:Character:Modification aWCM)
 	If (aWCM == none)
-		WriteError(Log, "Could not get an instance for user modification.")
+		WriteLine(Log, "Could not get an instance for user modification.")
 		return none
 	else
 		ClientEntry[] entries = aWCM.Skills.GetEntries()

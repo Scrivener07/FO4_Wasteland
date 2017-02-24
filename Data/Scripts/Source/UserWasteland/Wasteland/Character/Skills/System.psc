@@ -1,8 +1,8 @@
 Scriptname Wasteland:Character:Skills:System extends Quest
 import Wasteland:Character
 import Wasteland:Character:Modification
-import Wasteland:Library:Common
-import Wasteland:Library:Log
+import Shared:Papyrus
+import Shared:Log
 
 UserLog Log
 CustomEvent ReadyEvent
@@ -76,7 +76,7 @@ bool Function Register(Skills:Client aScript)
 			Clients.Add(entry)
 			return true
 		Else
-			WriteError(Log, "Could not add the entry " + entry.Name + " because it already exists.")
+			WriteLine(Log, "Could not add the entry " + entry.Name + " because it already exists.")
 			return false
 		EndIf
 	EndIf
@@ -94,7 +94,7 @@ bool Function Unregister(Skills:Client aScript)
 			Clients.Remove(index)
 			return true
 		Else
-			WriteError(Log, "Could not find " + aScript.Name + " to unregister.")
+			WriteLine(Log, "Could not find " + aScript.Name + " to unregister.")
 			return false
 		EndIf
 	EndIf

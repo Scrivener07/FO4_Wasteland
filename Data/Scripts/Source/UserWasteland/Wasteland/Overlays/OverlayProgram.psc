@@ -1,5 +1,5 @@
 Scriptname Wasteland:Overlays:OverlayProgram extends ObjectReference
-import Wasteland:Library:Log
+import Shared:Log
 
 
 ; Variables
