@@ -1,4 +1,4 @@
-Scriptname Wasteland:Character:Testing extends Lilac_1_2:Lilac
+Scriptname Wasteland:Character:Testing extends Lilac
 import Wasteland:Character:Skills
 ; https://github.com/chesko256/LilacFO4/wiki
 
