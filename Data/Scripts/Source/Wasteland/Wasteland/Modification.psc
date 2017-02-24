@@ -1,4 +1,4 @@
-Scriptname Wasteland:Overlays:Modification extends Quest
+Scriptname Wasteland:Modification extends Quest
 import Shared:Compatibility
 import Shared:Log
 import Shared:Papyrus
@@ -7,12 +7,12 @@ import Shared:Papyrus
 ;---------------------------------------------
 
 string Function GetTitle() Global
-	return "Wasteland Overlays"
+	return "Wasteland"
 EndFunction
 
 
 string Function GetPluginName() Global
-	return "WastelandOverlays.esp"
+	return "Wasteland.esp"
 EndFunction
 
 

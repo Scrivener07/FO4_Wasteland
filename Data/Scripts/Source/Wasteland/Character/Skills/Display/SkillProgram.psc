@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:Display:SkillProgram extends ObjectReference
-import Wasteland:Character:Modification
-import Wasteland:Character:Skills:System
+Scriptname Character:Skills:Display:SkillProgram extends ObjectReference
+import Character:Modification
+import Character:Skills:System
 import Shared:Log
 
 ; http://www.creationkit.com/fallout4/index.php?title=Text_Replacement
@@ -15,7 +15,7 @@ ObjectReference LastTerminal
 
 
 Group Properties
-	Wasteland:Character:Modification Property WCM Auto Const Mandatory
+	Character:Modification Property WCM Auto Const Mandatory
 	Message Property Character_Skill_ProgramMessage Auto Const Mandatory
 EndGroup
 
@@ -63,7 +63,7 @@ EndEvent
 ; Data
 ;---------------------------------------------
 
-string Function DataString(Wasteland:Character:Modification aWCM)
+string Function DataString(Character:Modification aWCM)
 	If (aWCM == none)
 		WriteLine(Log, "Could not get an instance for user modification.")
 		return none

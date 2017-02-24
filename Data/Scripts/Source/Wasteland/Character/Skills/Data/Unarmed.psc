@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:Data:Unarmed Extends Wasteland:Character:Skills:Client
-import Wasteland:Character:Modification
-import Wasteland:Character:Skills
+Scriptname Character:Skills:Data:Unarmed Extends Character:Skills:Client
+import Character:Modification
+import Character:Skills
 import Shared:Log
 
 

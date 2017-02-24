@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:Data:Blunt extends Wasteland:Character:Skills:Client
-import Wasteland:Character:Modification
-import Wasteland:Character:Skills
+Scriptname Character:Skills:Data:Blade extends Character:Skills:Client
+import Character:Modification
+import Character:Skills
 import Shared:Log
 
 UserLog Log
@@ -15,12 +15,14 @@ Function OnInitialize()
 	Log.FileName = GetTitle()
 EndFunction
 
+
 Client:CustomSkill Function Create(CustomSkill skill)
 	WriteLine(Log, "Create")
-	skill.Name = "Blunt"
-	skill.Description = "Using blunted weapons in melee combat such as crowbars, hammers, pipes, clubs and so on."
+	skill.Name = "Blade"
+	skill.Description = "Using bladed weapons in melee combat such as knives and sharpened tools."
 	return skill
 EndFunction
+
 
 ; Experience
 ;---------------------------------------------

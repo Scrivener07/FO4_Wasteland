@@ -1,8 +1,8 @@
-Scriptname Wasteland:Character:Modification extends Quest
+Scriptname Character:Modification extends Quest
 import Shared:Compatibility
 import Shared:Log
 import Shared:Papyrus
-import Wasteland:Character:Skills
+import Character:Skills
 
 Group Components
 	System Property Skills Auto Const Mandatory
@@ -18,7 +18,7 @@ EndFunction
 
 
 string Function GetPluginName() Global
-	return "WastelandCharacter.esp"
+	return "Wasteland Character.esp"
 EndFunction
 
 

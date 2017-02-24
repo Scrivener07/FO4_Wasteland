@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:Data:Barter extends Wasteland:Character:Skills:Client
-import Wasteland:Character:Modification
-import Wasteland:Character:Skills
+Scriptname Character:Skills:Data:Barter extends Character:Skills:Client
+import Character:Modification
+import Character:Skills
 import Shared:Log
 ; http://www.creationkit.com/fallout4/index.php?title=OnSell_-_ObjectReference
 ; http://www.creationkit.com/fallout4/index.php?title=OnPlayerDialogueTarget_-_ObjectReference

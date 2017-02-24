@@ -1,4 +1,4 @@
-Scriptname Wasteland:Overlays:OverlayProgram extends ObjectReference
+Scriptname Wasteland:HoloProgram extends ObjectReference
 import Shared:Log
 
 
@@ -11,7 +11,7 @@ ObjectReference LastTerminal
 
 
 Group Properties
-	Message Property Overlays_ProgramMessage Auto Const Mandatory
+	Message Property Wasteland_HoloProgramMessage Auto Const Mandatory
 EndGroup
 
 
@@ -21,7 +21,7 @@ EndGroup
 Event OnInit()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = Wasteland:Overlays:Modification.GetTitle()
+	Log.FileName = Wasteland:Modification.GetTitle()
 EndEvent
 
 
@@ -37,8 +37,8 @@ Event OnHolotapePlay(ObjectReference akTerminalRef)
 
 	; Message equals "banana.png"
 
-	LastTerminal.AddTextReplacementData(DataToken, Overlays_ProgramMessage)
-	Writeline(Log, "Sent the message '"+ Overlays_ProgramMessage + "' to OverlayProgram.as")
+	LastTerminal.AddTextReplacementData(DataToken, Wasteland_HoloProgramMessage)
+	Writeline(Log, "Sent the message '"+ Wasteland_HoloProgramMessage + "' to HoloProgram.as")
 EndEvent
 
 

@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:System extends Quest
-import Wasteland:Character
-import Wasteland:Character:Modification
+Scriptname Character:Skills:System extends Quest
+import Character
+import Character:Modification
 import Shared:Papyrus
 import Shared:Log
 

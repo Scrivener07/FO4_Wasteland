@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:Data:Dummy Extends Wasteland:Character:Skills:Client
-import Wasteland:Character:Modification
-import Wasteland:Character:Skills
+Scriptname Character:Skills:Data:Dummy Extends Character:Skills:Client
+import Character:Modification
+import Character:Skills
 import Shared:Log
 
 

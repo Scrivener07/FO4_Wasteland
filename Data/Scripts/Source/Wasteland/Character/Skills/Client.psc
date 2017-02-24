@@ -1,6 +1,6 @@
-Scriptname Wasteland:Character:Skills:Client extends Quest Hidden
-import Wasteland:Character
-import Wasteland:Character:Modification
+Scriptname Character:Skills:Client extends Quest Hidden
+import Character
+import Character:Modification
 import Shared:Papyrus
 import Shared:Log
 
@@ -52,7 +52,7 @@ Event OnInit()
 		WriteLine(Log, "The custom skill provided was none.")
 	EndIf
 
-	Wasteland:Character:Modification wcm = Modification()
+	Character:Modification wcm = Modification()
 	If (wcm)
 		RegisterForCustomEvent(wcm.Skills, "ReadyEvent")
 		RegisterForCustomEvent(wcm.Skills, "ResetEvent")
@@ -66,7 +66,7 @@ EndEvent
 ; System Event
 ;---------------------------------------------
 
-Event Wasteland:Character:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments)
+Event Character:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments)
 	If (akSender.Register(self))
 		WriteLine(Log, "The client registered on the skill system.")
 		Registered = true
@@ -78,13 +78,13 @@ Event Wasteland:Character:Skills:System.ReadyEvent(Skills:System akSender, var[]
 EndEvent
 
 
-Event Wasteland:Character:Skills:System.ResetEvent(Skills:System akSender, var[] arguments)
+Event Character:Skills:System.ResetEvent(Skills:System akSender, var[] arguments)
 	WriteLine(Log, "The client is resetting.")
 	OnSystemReset()
 EndEvent
 
 
-Event Wasteland:Character:Skills:System.ShutdownEvent(Skills:System akSender, var[] arguments)
+Event Character:Skills:System.ShutdownEvent(Skills:System akSender, var[] arguments)
 	WriteLine(Log, "The client is shutting down.")
 	UnregisterForCustomEvent(akSender, "ReadyEvent")
 	Registered = !akSender.Unregister(self)
