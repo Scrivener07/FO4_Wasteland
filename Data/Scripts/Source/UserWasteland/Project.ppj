@@ -11,6 +11,7 @@
 	>
 	<Imports>
 		<Import>.</Import>
+		<Import>..\Scripting</Import>
 		<Import>..\Lilac</Import>
 		<Import>..\F4SE</Import>
 		<Import>..\Base</Import>
