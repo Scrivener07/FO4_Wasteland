@@ -1,2 +1,3 @@
-# FO4_Wasteland_Character
-This is a modification for Fallout 4 that affects the player character.
+# FO4_Wasteland
+This project is my playground for various fallout 4 experiments.
+
