@@ -1,4 +1,4 @@
-Scriptname Wasteland:HoloProgram extends ObjectReference
+Scriptname Fallout:Wasteland:HoloProgram extends ObjectReference
 import Papyrus
 import Papyrus:Diagnostics:Log
 
