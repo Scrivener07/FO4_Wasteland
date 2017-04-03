@@ -16,24 +16,6 @@ Event OnInitialize()
 EndEvent
 
 
-Event OnContextStartup()
-	{VIRTUAL}
-	WriteLine(Log, "OnContextStartup")
-EndEvent
-
-
-Event OnGameReload()
-	{VIRTUAL}
-	WriteLine(Log, "OnGameReload")
-EndEvent
-
-
-Event OnContextShutdown()
-	{VIRTUAL}
-	WriteLine(Log, "OnContextShutdown")
-EndEvent
-
-
 ; Context
 ;---------------------------------------------
 
