@@ -1,8 +1,8 @@
-Scriptname Character:Modification extends Papyrus:Project:Context
+Scriptname Fallout:Character:Modification extends Papyrus:Project:Context
+import Fallout:Character:Skills
 import Papyrus:Compatibility:External
 import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
-import Character:Skills
 
 UserLog Log
 

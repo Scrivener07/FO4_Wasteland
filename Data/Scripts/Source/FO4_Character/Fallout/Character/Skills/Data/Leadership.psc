@@ -1,6 +1,6 @@
-Scriptname Character:Skills:Data:Leadership extends Character:Skills:Client
-import Character:Modification
-import Character:Skills
+Scriptname Fallout:Character:Skills:Data:Leadership extends Fallout:Character:Skills:Client
+import Fallout:Character:Modification
+import Fallout:Character:Skills
 import Papyrus:Diagnostics:Log
 
 

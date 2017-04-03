@@ -1,8 +1,8 @@
-Scriptname Character:Skills:Client extends Quest Hidden
-import Character
+Scriptname Fallout:Character:Skills:Client extends Quest Hidden
+import Fallout:Character
+import Papyrus
 import Papyrus:Diagnostics:Log
 import Papyrus:StringType
-import Papyrus
 
 UserLog Log
 CustomSkill Skill
@@ -49,7 +49,7 @@ Event OnInit()
 		WriteLine(Log, "The custom skill provided was none.")
 	EndIf
 
-	Character:Modification wcm = Context as Character:Modification
+	Fallout:Character:Modification wcm = Context as Fallout:Character:Modification
 	If (wcm)
 		RegisterForCustomEvent(wcm.Skills, "ReadyEvent")
 		RegisterForCustomEvent(wcm.Skills, "ResetEvent")
@@ -63,7 +63,7 @@ EndEvent
 ; System Event
 ;---------------------------------------------
 
-Event Character:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments)
+Event Fallout:Character:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments)
 	If (akSender.Register(self))
 		WriteLine(Log, "The client registered on the skill system.")
 		Registered = true
@@ -75,13 +75,13 @@ Event Character:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments
 EndEvent
 
 
-Event Character:Skills:System.ResetEvent(Skills:System akSender, var[] arguments)
+Event Fallout:Character:Skills:System.ResetEvent(Skills:System akSender, var[] arguments)
 	WriteLine(Log, "The client is resetting.")
 	OnSystemReset()
 EndEvent
 
 
-Event Character:Skills:System.ShutdownEvent(Skills:System akSender, var[] arguments)
+Event Fallout:Character:Skills:System.ShutdownEvent(Skills:System akSender, var[] arguments)
 	WriteLine(Log, "The client is shutting down.")
 	UnregisterForCustomEvent(akSender, "ReadyEvent")
 	Registered = !akSender.Unregister(self)

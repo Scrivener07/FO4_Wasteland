@@ -1,8 +1,8 @@
-Scriptname Character:Skills:System extends Quest
-import Character
-import Papyrus:StringType
-import Papyrus:Diagnostics:Log
+Scriptname Fallout:Character:Skills:System extends Quest
+import Fallout:Character
 import Papyrus
+import Papyrus:Diagnostics:Log
+import Papyrus:StringType
 
 UserLog Log
 

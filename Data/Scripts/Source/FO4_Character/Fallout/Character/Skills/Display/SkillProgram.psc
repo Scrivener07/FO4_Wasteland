@@ -1,8 +1,8 @@
-Scriptname Character:Skills:Display:SkillProgram extends ObjectReference
-import Character:Modification
-import Character:Skills:System
-import Papyrus:Diagnostics:Log
+Scriptname Fallout:Character:Skills:Display:SkillProgram extends ObjectReference
+import Fallout:Character:Modification
+import Fallout:Character:Skills:System
 import Papyrus
+import Papyrus:Diagnostics:Log
 
 ; http://www.creationkit.com/fallout4/index.php?title=Text_Replacement
 ; http://www.creationkit.com/fallout4/index.php?title=AddTextReplacementData_-_ObjectReference
@@ -17,7 +17,7 @@ ObjectReference LastTerminal
 
 Group Properties
 	Project:Context Property Context Auto Const Mandatory
-	Character:Modification Property WCM Auto Const Mandatory ; same ref as context, use instead of context or move skill property
+	Fallout:Character:Modification Property WCM Auto Const Mandatory ; same ref as context, use instead of context or move skill property
 	Message Property Character_Skill_ProgramMessage Auto Const Mandatory
 EndGroup
 
@@ -65,7 +65,7 @@ EndEvent
 ; Data
 ;---------------------------------------------
 
-string Function DataString(Character:Modification aWCM)
+string Function DataString(Fallout:Character:Modification aWCM)
 	If (aWCM == none)
 		WriteLine(Log, "Could not get an instance for user modification.")
 		return none
