@@ -1,16 +1,25 @@
 Scriptname Character:Skills:System extends Quest
 import Character
-import Character:Modification
-import Shared:Papyrus
-import Shared:Log
+import Papyrus:StringType
+import Papyrus:Diagnostics:Log
+import Papyrus
 
 UserLog Log
+
 CustomEvent ReadyEvent
 CustomEvent ResetEvent
 CustomEvent ShutdownEvent
+
 ClientEntry[] Clients
 
 
+
+; Properties
+;---------------------------------------------
+
+Group Properties
+	Project:Context Property Context Auto Const Mandatory
+EndGroup
 
 
 Struct ClientEntry
@@ -25,7 +34,8 @@ EndStruct
 Event OnInit()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
+
 	Clients = new ClientEntry[0]
 	Actor Player = Game.GetPlayer()
 	RegisterForRemoteEvent(Player, "OnPlayerLoadGame")

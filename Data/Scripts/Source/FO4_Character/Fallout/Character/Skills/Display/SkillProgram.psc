@@ -1,7 +1,8 @@
 Scriptname Character:Skills:Display:SkillProgram extends ObjectReference
 import Character:Modification
 import Character:Skills:System
-import Shared:Log
+import Papyrus:Diagnostics:Log
+import Papyrus
 
 ; http://www.creationkit.com/fallout4/index.php?title=Text_Replacement
 ; http://www.creationkit.com/fallout4/index.php?title=AddTextReplacementData_-_ObjectReference
@@ -15,7 +16,8 @@ ObjectReference LastTerminal
 
 
 Group Properties
-	Character:Modification Property WCM Auto Const Mandatory
+	Project:Context Property Context Auto Const Mandatory
+	Character:Modification Property WCM Auto Const Mandatory ; same ref as context, use instead of context or move skill property
 	Message Property Character_Skill_ProgramMessage Auto Const Mandatory
 EndGroup
 
@@ -26,7 +28,7 @@ EndGroup
 Event OnInit()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
 EndEvent
 
 

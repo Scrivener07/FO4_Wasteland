@@ -1,7 +1,7 @@
 Scriptname Character:Skills:Data:Exploration extends Character:Skills:Client
 import Character:Modification
 import Character:Skills
-import Shared:Log
+import Papyrus:Diagnostics:Log
 ; http://www.creationkit.com/fallout4/index.php?title=OnLocationChange_-_Actor
 ; http://www.creationkit.com/fallout4/index.php?title=List_Of_Tracked_Stats
 
@@ -19,7 +19,7 @@ string StatCleared = "Dungeons Cleared" const
 Function OnInitialize()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
 EndFunction
 
 

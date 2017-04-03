@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+	<!-- ALL -->
+	<!-- http://www.creationkit.com/fallout4/index.php?title=Papyrus_Projects -->
+	<PapyrusProject
+		xmlns="PapyrusProject.xsd"
+		Flags="Institute_Papyrus_Flags.flg"
+		Output="..\"
+		Asm="Discard"
+		Optimize="false"
+		Release="false"
+		Final="false"
+	>
+	<Imports>
+		<Import>Scribe_Favorites</Import>
+		<Import>Scribe_Gameplay</Import>
+		<Import>Scribe_GameSave</Import>
+		<Import>Scribe_Wasteland</Import>
+		<Import>Scribe_Scripting</Import>
+		<Import>HUD_FRAMEWORK</Import>
+		<Import>Lilac</Import>
+		<Import>F4SE</Import>
+		<Import>Base</Import>
+	</Imports>
+	<Folders>
+		<Folder>Scribe_Scripting</Folder>
+		<Folder>Scribe_GameSave</Folder>
+		<Folder>Scribe_Gameplay</Folder>
+		<Folder>Scribe_Favorites</Folder>
+		<Folder>Scribe_Wasteland</Folder>
+	</Folders>
+</PapyrusProject>

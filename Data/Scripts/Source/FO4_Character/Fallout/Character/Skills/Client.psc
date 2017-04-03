@@ -1,11 +1,8 @@
 Scriptname Character:Skills:Client extends Quest Hidden
 import Character
-import Character:Modification
-import Shared:Papyrus
-import Shared:Log
-
-; Variables
-;---------------------------------------------
+import Papyrus:Diagnostics:Log
+import Papyrus:StringType
+import Papyrus
 
 UserLog Log
 CustomSkill Skill
@@ -22,7 +19,7 @@ string DescriptionDefault = "I_Forgot_To_Set_My_Skill_Description" const
 Event OnInit()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
 
 	Registered = false
 	PlayerReference = Game.GetPlayer()
@@ -52,7 +49,7 @@ Event OnInit()
 		WriteLine(Log, "The custom skill provided was none.")
 	EndIf
 
-	Character:Modification wcm = Modification()
+	Character:Modification wcm = Context as Character:Modification
 	If (wcm)
 		RegisterForCustomEvent(wcm.Skills, "ReadyEvent")
 		RegisterForCustomEvent(wcm.Skills, "ResetEvent")
@@ -180,7 +177,10 @@ EndStruct
 ; EndGroup
 
 
+
 Group Properties
+	Project:Context Property Context Auto Const Mandatory
+
 	bool Property IsRegistered Hidden
 		bool Function Get()
 			return Registered

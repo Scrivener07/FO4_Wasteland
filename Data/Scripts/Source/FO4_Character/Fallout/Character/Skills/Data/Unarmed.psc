@@ -1,7 +1,6 @@
 Scriptname Character:Skills:Data:Unarmed Extends Character:Skills:Client
-import Character:Modification
 import Character:Skills
-import Shared:Log
+import Papyrus:Diagnostics:Log
 
 
 UserLog Log
@@ -27,7 +26,7 @@ EndGroup
 Function OnInitialize()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
 	CurrentItem = none
 EndFunction
 

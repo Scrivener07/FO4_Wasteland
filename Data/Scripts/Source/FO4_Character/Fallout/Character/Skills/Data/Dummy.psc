@@ -1,7 +1,7 @@
 Scriptname Character:Skills:Data:Dummy Extends Character:Skills:Client
 import Character:Modification
 import Character:Skills
-import Shared:Log
+import Papyrus:Diagnostics:Log
 
 
 UserLog Log
@@ -13,7 +13,7 @@ UserLog Log
 Function OnInitialize()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
 EndFunction
 
 

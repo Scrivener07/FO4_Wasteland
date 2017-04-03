@@ -1,7 +1,7 @@
-Scriptname Character:Skills:Data:Blade extends Character:Skills:Client
+Scriptname Character:Skills:Data:Blunt extends Character:Skills:Client
 import Character:Modification
 import Character:Skills
-import Shared:Log
+import Papyrus:Diagnostics:Log
 
 UserLog Log
 
@@ -12,17 +12,15 @@ UserLog Log
 Function OnInitialize()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = GetTitle()
+	Log.FileName = Context.Title
 EndFunction
-
 
 Client:CustomSkill Function Create(CustomSkill skill)
 	WriteLine(Log, "Create")
-	skill.Name = "Blade"
-	skill.Description = "Using bladed weapons in melee combat such as knives and sharpened tools."
+	skill.Name = "Blunt"
+	skill.Description = "Using blunted weapons in melee combat such as crowbars, hammers, pipes, clubs and so on."
 	return skill
 EndFunction
-
 
 ; Experience
 ;---------------------------------------------

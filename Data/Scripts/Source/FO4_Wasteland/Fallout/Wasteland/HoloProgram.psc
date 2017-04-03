@@ -1,18 +1,13 @@
 Scriptname Wasteland:HoloProgram extends ObjectReference
-import Shared:Log
+import Papyrus
+import Papyrus:Diagnostics:Log
 
 
-; Variables
-;---------------------------------------------
 UserLog Log
 
 string DataToken = "DataToken" const
 ObjectReference LastTerminal
 
-
-Group Properties
-	Message Property Wasteland_HoloProgramMessage Auto Const Mandatory
-EndGroup
 
 
 ; Initialize
@@ -21,7 +16,7 @@ EndGroup
 Event OnInit()
 	Log = new UserLog
 	Log.Caller = self
-	Log.FileName = Wasteland:Modification.GetTitle()
+	Log.FileName = Context.Title
 EndEvent
 
 
@@ -51,3 +46,12 @@ Event OnHolotapeChatter(string asChatter, float afNumericData)
 	Writeline(Log, "|   Numeric: "+afNumericData)
 	Writeline(Log, "________________________")
 EndEvent
+
+
+; Properties
+;---------------------------------------------
+
+Group Properties
+	Project:Context Property Context Auto Const Mandatory
+	Message Property Wasteland_HoloProgramMessage Auto Const Mandatory
+EndGroup
