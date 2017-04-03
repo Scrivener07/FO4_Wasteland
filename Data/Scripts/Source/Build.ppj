@@ -11,21 +11,23 @@
 		Final="false"
 	>
 	<Imports>
-		<Import>Scribe_Favorites</Import>
-		<Import>Scribe_Gameplay</Import>
-		<Import>Scribe_GameSave</Import>
-		<Import>Scribe_Wasteland</Import>
-		<Import>Scribe_Scripting</Import>
+		<Import>FO4_Character</Import>
+		<Import>FO4_Favorites</Import>
+		<Import>FO4_Gameplay</Import>
+		<Import>FO4_Saving</Import>
+		<Import>FO4_Wasteland</Import>
+		<Import>FO4_Scripting</Import>
 		<Import>HUD_FRAMEWORK</Import>
 		<Import>Lilac</Import>
 		<Import>F4SE</Import>
 		<Import>Base</Import>
 	</Imports>
 	<Folders>
-		<Folder>Scribe_Scripting</Folder>
-		<Folder>Scribe_GameSave</Folder>
-		<Folder>Scribe_Gameplay</Folder>
-		<Folder>Scribe_Favorites</Folder>
-		<Folder>Scribe_Wasteland</Folder>
+		<Folder>FO4_Scripting</Folder>
+		<Folder>FO4_Character</Folder>
+		<Folder>FO4_Saving</Folder>
+		<Folder>FO4_Gameplay</Folder>
+		<Folder>FO4_Favorites</Folder>
+		<Folder>FO4_Wasteland</Folder>
 	</Folders>
 </PapyrusProject>

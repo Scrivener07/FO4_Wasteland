@@ -12,7 +12,7 @@
 	>
 	<Imports>
 		<Import>.</Import>
-		<Import>..\Scripting</Import>
+		<Import>..\FO4_Scripting</Import>
 		<Import>..\HUD_FRAMEWORK</Import>
 		<Import>..\Lilac</Import>
 		<Import>..\F4SE</Import>
@@ -20,6 +20,5 @@
 	</Imports>
 	<Folders>
 		<Folder>.</Folder>
-		<Folder>..\Scripting</Folder>
 	</Folders>
 </PapyrusProject>
