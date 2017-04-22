@@ -1,4 +1,4 @@
-Scriptname Fallout:Saving:Context extends Papyrus:Project:Context Conditional
+Scriptname Fallout:Saving:Context extends Papyrus:Project:Context
 import Papyrus:Compatibility:External
 import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
@@ -11,21 +11,18 @@ UserLog Log
 ;---------------------------------------------
 
 Event OnInitialize()
-	Log = Log(Title, self)
+	Log = LogNew(Title, self)
 	Required = MQ102
 	RequiredStage = 1
-	HasActivated = false
 EndEvent
 
 
 Event OnContextStartup()
-	HasActivated = true
 	Write(Title, "The context has started.")
 EndEvent
 
 
 Event OnContextShutdown()
-	HasActivated = false
 	Write(Title, "The context has shutdown.")
 EndEvent
 
@@ -68,7 +65,6 @@ EndFunction
 ;---------------------------------------------
 
 Group Properties
-	bool Property HasActivated Auto Hidden Conditional
 	Quest Property MQ102 Auto Const Mandatory
 EndGroup
 

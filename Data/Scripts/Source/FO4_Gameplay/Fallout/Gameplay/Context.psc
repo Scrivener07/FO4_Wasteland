@@ -10,7 +10,7 @@ UserLog Log
 ;---------------------------------------------
 
 Event OnInitialize()
-	Log = Log(Title, self)
+	Log = LogNew(Title, self)
 	Required = MQ102
 	RequiredStage = 1
 EndEvent

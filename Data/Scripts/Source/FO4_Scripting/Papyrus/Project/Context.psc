@@ -20,7 +20,7 @@ CustomEvent OnUpgrade
 ;---------------------------------------------
 
 Event OnInit()
-	Log = Log(Title, self)
+	Log = LogNew(Title, self)
 	LastVersion = Release
 	Condition = new QuestStage
 	Activated = false

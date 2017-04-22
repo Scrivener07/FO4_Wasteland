@@ -8,9 +8,7 @@ UserLog Log
 ;---------------------------------------------
 
 Event OnInit()
-	Log = new UserLog
-	Log.Caller = self
-	Log.FileName = "GameSave"
+	Log = LogNew("GameSave", self)
 EndEvent
 
 

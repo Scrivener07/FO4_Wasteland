@@ -12,7 +12,7 @@ int OptionShutdown = 1 const
 ;---------------------------------------------
 
 Event OnInit()
-	Log = Log(Context.Title, self)
+	Log = LogNew(Context.Title, self)
 EndEvent
 
 

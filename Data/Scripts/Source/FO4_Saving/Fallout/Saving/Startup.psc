@@ -8,7 +8,7 @@ UserLog Log
 ;---------------------------------------------
 
 Event OnInitialize()
-	Log = Log(Context.Title, self)
+	Log = LogNew(Context.Title, self)
 EndEvent
 
 

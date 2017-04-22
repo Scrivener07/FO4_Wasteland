@@ -42,7 +42,7 @@ EndFunction
 ;---------------------------------------------
 
 Event OnInitialize()
-	Log = Log(Context.Title, self)
+	Log = LogNew(Context.Title, self)
 	WriteLine(Log, "OnInitialize")
 EndEvent
 
