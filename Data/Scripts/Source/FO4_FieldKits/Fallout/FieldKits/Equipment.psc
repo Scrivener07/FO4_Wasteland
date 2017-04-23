@@ -57,7 +57,7 @@ EndEvent
 
 Event Actor.OnGetUp(Actor akSender, ObjectReference akFurniture)
 	WriteLine(Log, "The player is getting up from the '"+akFurniture+"' furniture.")
-    DestroyBench()
+	DestroyBench()
 EndEvent
 
 
