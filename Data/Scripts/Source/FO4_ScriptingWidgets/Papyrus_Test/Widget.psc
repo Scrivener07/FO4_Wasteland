@@ -1,9 +1,9 @@
-Scriptname Fallout:Gameplay:Widget extends Papyrus:GUI:HUDWidget
+Scriptname Papyrus_Test:Widget extends Papyrus:GUI:HUDWidget
 import Papyrus:Diagnostics:Log
 import Papyrus:PointType
 
 UserLog Log
-string WidgetID = "SettingsWidget.swf" const
+string WidgetID = "TestWidget.swf" const
 int Step = 10 const
 
 ; Keys

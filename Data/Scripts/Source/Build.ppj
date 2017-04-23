@@ -17,6 +17,7 @@
 		<Import>FO4_Gameplay</Import>
 		<Import>FO4_Saving</Import>
 		<Import>FO4_Wasteland</Import>
+		<Import>FO4_ScriptingWidgets</Import>
 		<Import>FO4_Scripting</Import>
 		<Import>HUD_FRAMEWORK</Import>
 		<Import>Lilac</Import>
@@ -30,6 +31,7 @@
 		<Folder>FO4_Saving</Folder>
 		<Folder>FO4_Wasteland</Folder>
 		<Folder>FO4_FieldKits</Folder>
+		<Folder>FO4_ScriptingWidgets</Folder>
 		<Folder>FO4_Scripting</Folder>
 	</Folders>
 </PapyrusProject>
