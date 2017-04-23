@@ -1,13 +1,12 @@
 ScriptName Fallout:FieldKits:Equipment extends Papyrus:Project:Modules:Required
 import Papyrus:Diagnostics:Log
 
-; http://www.creationkit.com/fallout4/index.php?title=PlaceAtMe_-_ObjectReference
-; http://www.creationkit.com/fallout4/index.php?title=Activate_-_ObjectReference
-
-
 UserLog Log
 
 ObjectReference Reference
+
+bool Silent = true const
+bool DefaultProcessingOnly = true const
 
 ; Message Options
 int NoneOption = -1 const
@@ -17,9 +16,6 @@ int ArmorOption = 2 const
 int PAOption = 3 const
 int CookOption = 4 const
 int ChemistryOption = 5 const
-
-bool Silent = true const
-bool DefaultProcessingOnly = true const
 
 
 ; Events
@@ -59,17 +55,6 @@ Event Actor.OnItemEquipped(Actor akSender, Form akBaseObject, ObjectReference ak
 EndEvent
 
 
-Event ObjectReference.OnActivate(ObjectReference akSender, ObjectReference akActionRef)
-	WriteLine(Log, "The player has activated the '"+akSender+"' furniture.")
-EndEvent
-
-
-Event ObjectReference.OnExitFurniture(ObjectReference akSender, ObjectReference akActionRef)
-	WriteLine(Log, "The player is exiting the '"+akSender+"' furniture.")
-	DestroyBench()
-EndEvent
-
-
 Event Actor.OnGetUp(Actor akSender, ObjectReference akFurniture)
 	WriteLine(Log, "The player is getting up from the '"+akFurniture+"' furniture.")
     DestroyBench()
@@ -78,6 +63,26 @@ EndEvent
 
 ; Functions
 ;---------------------------------------------
+
+Function GiveKit()
+	If (Count == 0)
+		Player.AddItem(Fallout_FieldKits_Kit, 1, Silent)
+		WriteLine(Log, "Gave the player one kit.")
+	Else
+		WriteLine(Log, "The player already has a kit.")
+	EndIf
+EndFunction
+
+
+Function RemoveKits()
+	If (Count > 0)
+		Player.RemoveItem(Fallout_FieldKits_Kit, Count, Silent)
+		WriteLine(Log, "Removed all kits from the player.")
+	Else
+		WriteLine(Log, "There are no kits to remove from the player.")
+	EndIf
+EndFunction
+
 
 Function PromptOptions()
 	int selected = Fallout_FieldKits_BenchOptionsMessage.Show()
@@ -111,62 +116,36 @@ Function CreateBench(Furniture aFurniture)
 
 	If (Reference)
 		Reference.SetAngle(0.0, 0.0, Reference.GetAngleZ())
-		RegisterForRemoteEvent(Reference, "OnActivate")
-		RegisterForRemoteEvent(Reference, "OnExitFurniture")
 		RegisterForRemoteEvent(Player, "OnGetUp")
-
-
 		InputEnableLayer input = InputEnableLayer.Create()
 		input.DisablePlayerControls()
-		Game.ForceThirdPerson()
-		;Utility.Wait(0.5)
 
 		If (Reference.Activate(Player, DefaultProcessingOnly))
-			WriteLine(Log, "Activated bench. " + Reference)
-
+			WriteLine(Log, "Activated new bench. " + Reference)
 		Else
-			WriteLine(Log, "Could not activate the bench. " + Reference)
+			WriteLine(Log, "Could not activate new bench. " + Reference)
 			DestroyBench()
+			Fallout_FieldKits_BenchFailedMessage.Show()
 		EndIf
 
 		input.EnablePlayerControls()
 	Else
-		DestroyBench()
 		WriteLine(Log, "Could not create a new bench.")
+		DestroyBench()
+		Fallout_FieldKits_BenchFailedMessage.Show()
 	EndIf
 EndFunction
 
 
 Function DestroyBench()
 	If (Reference)
-		UnregisterForRemoteEvent(Reference, "OnActivate")
-		UnregisterForRemoteEvent(Reference, "OnExitFurniture")
+		WriteLine(Log, "Destroying the bench. " + Reference)
 		UnregisterForRemoteEvent(Player, "OnGetUp")
 		Reference.Disable()
 		Reference.Delete()
-		WriteLine(Log, "Destroyed a bench. " + Reference)
+		Reference = none
 	Else
 		WriteLine(Log, "There is no bench to destroy.")
-	EndIf
-EndFunction
-
-
-Function GiveKit()
-	If (Count == 0)
-		Player.AddItem(Fallout_FieldKits_Kit, 1, Silent)
-		WriteLine(Log, "Gave the player one kit.")
-	Else
-		WriteLine(Log, "The player already has a kit.")
-	EndIf
-EndFunction
-
-
-Function RemoveKits()
-	If (Count > 0)
-		Player.RemoveItem(Fallout_FieldKits_Kit, Count, Silent)
-		WriteLine(Log, "Removed all kits from the player.")
-	Else
-		WriteLine(Log, "There are no kits to remove from the player.")
 	EndIf
 EndFunction
 
@@ -187,6 +166,7 @@ EndGroup
 
 Group Reference
 	Message Property Fallout_FieldKits_BenchOptionsMessage Auto Const Mandatory
+	Message Property Fallout_FieldKits_BenchFailedMessage Auto Const Mandatory
 	Furniture Property Fallout_FieldKits_BenchWeapon Auto Const Mandatory
 	Furniture Property Fallout_FieldKits_BenchArmor Auto Const Mandatory
 	Furniture Property Fallout_FieldKits_BenchPA Auto Const Mandatory
