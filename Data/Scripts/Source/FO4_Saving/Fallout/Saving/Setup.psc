@@ -1,4 +1,4 @@
-Scriptname Fallout:Saving:Startup extends Papyrus:Project:Modules:Required
+Scriptname Fallout:Saving:Setup extends Papyrus:Project:Modules:Required
 import Papyrus:Diagnostics:Log
 
 UserLog Log

@@ -8,7 +8,7 @@ UserLog Log
 ;---------------------------------------------
 
 Event OnInit()
-	Log = LogNew("GameSave", self)
+	Log = LogNew("Saving", self)
 EndEvent
 
 
