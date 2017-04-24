@@ -16,6 +16,7 @@
 		<Import>FO4_FieldKits</Import>
 		<Import>FO4_Gameplay</Import>
 		<Import>FO4_Saving</Import>
+		<Import>FO4_Posture</Import>
 		<Import>FO4_Wasteland</Import>
 		<Import>FO4_ScriptingWidgets</Import>
 		<Import>FO4_Scripting</Import>
@@ -29,6 +30,7 @@
 		<Folder>FO4_Favorites</Folder>
 		<Folder>FO4_Gameplay</Folder>
 		<Folder>FO4_Saving</Folder>
+		<Folder>FO4_Posture</Folder>
 		<Folder>FO4_Wasteland</Folder>
 		<Folder>FO4_FieldKits</Folder>
 		<Folder>FO4_ScriptingWidgets</Folder>

@@ -1,4 +1,4 @@
-Scriptname Fallout:Posture:Context extends Papyrus:Project:Context
+Scriptname Fallout:Posture:Context extends Papyrus:Project:Context Conditional
 import Papyrus:Compatibility:External
 import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
