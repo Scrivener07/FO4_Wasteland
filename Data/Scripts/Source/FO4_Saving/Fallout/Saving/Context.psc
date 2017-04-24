@@ -1,29 +1,14 @@
 Scriptname Fallout:Saving:Context extends Papyrus:Project:Context
 import Papyrus:Compatibility:External
-import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
-
-UserLog Log
-
 
 
 ; Events
 ;---------------------------------------------
 
 Event OnInitialize()
-	Log = LogNew(Title, self)
 	Required = MQ102
 	RequiredStage = 1
-EndEvent
-
-
-Event OnContextStartup()
-	Write(Title, "The context has started.")
-EndEvent
-
-
-Event OnContextShutdown()
-	Write(Title, "The context has shutdown.")
 EndEvent
 
 
@@ -67,4 +52,3 @@ EndFunction
 Group Properties
 	Quest Property MQ102 Auto Const Mandatory
 EndGroup
-

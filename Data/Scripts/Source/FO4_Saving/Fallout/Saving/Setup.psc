@@ -13,21 +13,12 @@ EndEvent
 
 
 Event OnEnable()
-	Player.AddPerk(Fallout_SavingBedPerk, false)
-	WriteLine(Log, "Added the save with beds perk." + Fallout_SavingBedPerk)
-
 	If (HasHolotape)
-		WriteLine(Log, "Player already has a holotape." + Fallout_SavingSettings)
+		WriteLine(Log, "Player already has a holotape." + Fallout_Saving_Holotape)
 	Else
-		Player.AddItem(Fallout_SavingSettings, 1, true)
-		WriteLine(Log, "Added the holotape." + Fallout_SavingSettings)
+		Player.AddItem(Fallout_Saving_Holotape, 1, true)
+		WriteLine(Log, "Added the holotape." + Fallout_Saving_Holotape)
 	EndIf
-EndEvent
-
-
-Event OnDisable()
-	Player.RemovePerk(Fallout_SavingBedPerk)
-	WriteLine(Log, "Removed the save with beds perk." + Fallout_SavingBedPerk)
 EndEvent
 
 
@@ -35,12 +26,11 @@ EndEvent
 ;---------------------------------------------
 
 Group Properties
-	Perk Property Fallout_SavingBedPerk Auto Const Mandatory
-	Holotape Property Fallout_SavingSettings Auto Const Mandatory
+	Holotape Property Fallout_Saving_Holotape Auto Const Mandatory
 EndGroup
 
 bool Property HasHolotape Hidden
 	bool Function Get()
-		return Player.GetItemCount(Fallout_SavingSettings) > 0
+		return Player.GetItemCount(Fallout_Saving_Holotape) > 0
 	EndFunction
 EndProperty
