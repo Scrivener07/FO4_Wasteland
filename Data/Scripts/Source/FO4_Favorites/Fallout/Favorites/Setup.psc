@@ -14,10 +14,10 @@ EndEvent
 
 Event OnEnable()
 	If (HasHolotape)
-		WriteLine(Log, "Player already has a holotape." + Fallout_FavoritesSettings)
+		WriteLine(Log, "Player already has a holotape." + Fallout_Favorites_Holotape)
 	Else
-		Player.AddItem(Fallout_FavoritesSettings, 1, true)
-		WriteLine(Log, "Added the holotape." + Fallout_FavoritesSettings)
+		Player.AddItem(Fallout_Favorites_Holotape, 1, true)
+		WriteLine(Log, "Added the holotape." + Fallout_Favorites_Holotape)
 	EndIf
 EndEvent
 
@@ -26,11 +26,11 @@ EndEvent
 ;---------------------------------------------
 
 Group Properties
-	Holotape Property Fallout_FavoritesSettings Auto Const Mandatory
+	Holotape Property Fallout_Favorites_Holotape Auto Const Mandatory
 EndGroup
 
 bool Property HasHolotape Hidden
 	bool Function Get()
-		return Player.GetItemCount(Fallout_FavoritesSettings) > 0
+		return Player.GetItemCount(Fallout_Favorites_Holotape) > 0
 	EndFunction
 EndProperty

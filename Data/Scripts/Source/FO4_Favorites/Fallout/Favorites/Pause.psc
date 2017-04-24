@@ -17,56 +17,43 @@ EndEvent
 
 
 Event OnEnable()
-	WriteLine(Log, "OnEnable")
+	WriteLine(Log, "Enabling..")
 	RegisterForMenuOpenCloseEvent(FavoritesMenu)
 EndEvent
 
 
 Event OnDisable()
-	WriteLine(Log, "OnDisable")
+	WriteLine(Log, "Disabling..")
 	UnregisterForMenuOpenCloseEvent(FavoritesMenu)
+	Player.RemoveSpell(Fallout_Favorites_Pause)
+	InputLayer.Reset()
 EndEvent
 
 
 Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
 	WriteLine(Log, "The menu '"+asMenuName+"' is opening equals '"+abOpening+"'.")
-	Pause(abOpening)
-EndEvent
-
-
-
-; Functions
-;---------------------------------------------
-
-bool Function Pause(bool abApply = true)
-	If (abApply)
-		If (InCombat)
-			Player.AddSpell(Fallout_Favorites_Pause, false)
-
+	If (abOpening)
+		If (Player.IsInCombat())
 			bool bSneaking = Player.IsSneaking()
+
+			Player.AddSpell(Fallout_Favorites_Pause, false)
 			InputLayer.EnableLooking(false)
 
 			If (bSneaking)
 				Player.StartSneaking()
-				WriteLine(Log, "Reappling the players sneak state.")
-			Else
-				WriteLine(Log, "No need to reapply the players sneak state.")
+				WriteLine(Log, "Reapplying the players sneak state.")
 			EndIf
 
-
 			WriteLine(Log, "The favorites pause spell has been cast on the player.")
-			return true
 		Else
 			WriteLine(Log, "The player must be in combat to pause the favorites menu.")
-			return false
 		EndIf
 	Else
 		Player.RemoveSpell(Fallout_Favorites_Pause)
 		InputLayer.Reset()
-		WriteLine(Log, "The favorites pause spell has been dispeled from the player.")
-		return true
+		WriteLine(Log, "The favorites pause spell has been removed from the player.")
 	EndIf
-EndFunction
+EndEvent
 
 
 ; Properties
@@ -74,10 +61,4 @@ EndFunction
 
 Group Properties
 	Spell Property Fallout_Favorites_Pause Auto Const Mandatory
-
-	bool Property InCombat Hidden
-		bool Function Get()
-			return Player.IsInCombat()
-		EndFunction
-	EndProperty
 EndGroup
