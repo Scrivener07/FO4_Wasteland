@@ -58,6 +58,6 @@ Group Properties
 	Quest Property MQ102 Auto Const Mandatory
 EndGroup
 
-Group Components
-	Skills:System Property Skills Auto Const Mandatory
-EndGroup
+; Group Components
+; 	Skills:System Property Skills Auto Const Mandatory
+; EndGroup

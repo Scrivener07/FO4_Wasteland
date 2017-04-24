@@ -48,9 +48,9 @@ Event OnInit()
 		WriteLine(Log, "The custom skill provided was none.")
 	EndIf
 
-	RegisterForCustomEvent(Context.Skills, "ReadyEvent")
-	RegisterForCustomEvent(Context.Skills, "ResetEvent")
-	RegisterForCustomEvent(Context.Skills, "ShutdownEvent")
+	RegisterForCustomEvent(System, "ReadyEvent")
+	RegisterForCustomEvent(System, "ResetEvent")
+	RegisterForCustomEvent(System, "ShutdownEvent")
 EndEvent
 
 
@@ -174,6 +174,7 @@ EndStruct
 
 Group Properties
 	Skills:Context Property Context Auto Const Mandatory
+	Skills:System Property System Auto Const Mandatory
 
 	bool Property IsRegistered Hidden
 		bool Function Get()

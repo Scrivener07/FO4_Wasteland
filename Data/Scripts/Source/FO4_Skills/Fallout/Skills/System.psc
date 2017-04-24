@@ -1,6 +1,5 @@
-Scriptname Fallout:Skills:System extends Quest
+Scriptname Fallout:Skills:System extends Papyrus:Project:Modules:Required
 import Fallout
-import Papyrus
 import Papyrus:Diagnostics:Log
 import Papyrus:StringType
 
@@ -21,25 +20,23 @@ EndStruct
 
 ; Events
 ;---------------------------------------------
-
-Event OnInit()
+Event OnInitialize()
 	Log = new UserLog
 	Log.Caller = self
 	Log.FileName = Context.Title
 
 	Clients = new ClientEntry[0]
-	Actor Player = Game.GetPlayer()
 	RegisterForRemoteEvent(Player, "OnPlayerLoadGame")
 EndEvent
 
 
-Event OnQuestInit()
+Event OnEnable()
 	WriteLine(Log, "OnQuestInit")
 	StartTimer(5)
 EndEvent
 
 
-Event OnQuestShutdown()
+Event OnDisable()
 	WriteLine(Log, "Sending the shutdown event..")
 	SendCustomEvent("ShutdownEvent")
 EndEvent
@@ -128,11 +125,3 @@ EndFunction
 ClientEntry[] Function GetEntries()
 	return Clients
 EndFunction
-
-
-; Properties
-;---------------------------------------------
-
-Group Properties
-	Project:Context Property Context Auto Const Mandatory
-EndGroup

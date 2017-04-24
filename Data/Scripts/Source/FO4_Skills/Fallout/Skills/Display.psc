@@ -1,4 +1,4 @@
-Scriptname Fallout:Skills:Display:SkillProgram extends ObjectReference
+Scriptname Fallout:Skills:Display extends ObjectReference
 import Fallout
 import Papyrus:Diagnostics:Log
 
@@ -52,7 +52,7 @@ string Function DataString(Skills:Context aContext)
 		WriteLine(Log, "Could not get an instance for user modification.")
 		return none
 	else
-		Skills:System:ClientEntry[] entries = aContext.Skills.GetEntries()
+		Skills:System:ClientEntry[] entries = Skills.GetEntries()
 		string datastring = ""
 
 		int idx = 0
@@ -83,5 +83,6 @@ EndFunction
 
 Group Properties
 	Skills:Context Property Context Auto Const Mandatory
+	Skills:System Property Skills Auto Const Mandatory
 	Message Property Fallout_Skills_ProgramMessage Auto Const Mandatory
 EndGroup
