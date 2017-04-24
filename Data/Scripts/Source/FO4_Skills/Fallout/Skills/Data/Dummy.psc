@@ -1,6 +1,5 @@
-Scriptname Fallout:Character:Skills:Data:Dummy Extends Fallout:Character:Skills:Client
-import Fallout:Character:Modification
-import Fallout:Character:Skills
+Scriptname Fallout:Skills:Data:Dummy Extends Fallout:Skills:Client
+import Fallout:Skills
 import Papyrus:Diagnostics:Log
 
 

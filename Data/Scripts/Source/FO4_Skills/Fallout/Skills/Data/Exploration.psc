@@ -1,6 +1,6 @@
-Scriptname Fallout:Character:Skills:Data:Exploration extends Fallout:Character:Skills:Client
-import Fallout:Character:Modification
-import Fallout:Character:Skills
+Scriptname Fallout:Skills:Data:Exploration extends Fallout:Skills:Client
+import Fallout:Skills
+import Fallout:Skills:Context
 import Papyrus:Diagnostics:Log
 ; http://www.creationkit.com/fallout4/index.php?title=OnLocationChange_-_Actor
 ; http://www.creationkit.com/fallout4/index.php?title=List_Of_Tracked_Stats

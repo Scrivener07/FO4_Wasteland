@@ -1,6 +1,5 @@
-Scriptname Fallout:Character:Skills:Client extends Quest Hidden
-import Fallout:Character
-import Papyrus
+Scriptname Fallout:Skills:Client extends Quest Hidden
+import Fallout
 import Papyrus:Diagnostics:Log
 import Papyrus:StringType
 
@@ -49,21 +48,16 @@ Event OnInit()
 		WriteLine(Log, "The custom skill provided was none.")
 	EndIf
 
-	Fallout:Character:Modification wcm = Context as Fallout:Character:Modification
-	If (wcm)
-		RegisterForCustomEvent(wcm.Skills, "ReadyEvent")
-		RegisterForCustomEvent(wcm.Skills, "ResetEvent")
-		RegisterForCustomEvent(wcm.Skills, "ShutdownEvent")
-	Else
-		WriteLine(Log, "The skill client could not get an instance for skill system script.")
-	EndIf
+	RegisterForCustomEvent(Context.Skills, "ReadyEvent")
+	RegisterForCustomEvent(Context.Skills, "ResetEvent")
+	RegisterForCustomEvent(Context.Skills, "ShutdownEvent")
 EndEvent
 
 
 ; System Event
 ;---------------------------------------------
 
-Event Fallout:Character:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments)
+Event Fallout:Skills:System.ReadyEvent(Skills:System akSender, var[] arguments)
 	If (akSender.Register(self))
 		WriteLine(Log, "The client registered on the skill system.")
 		Registered = true
@@ -75,13 +69,13 @@ Event Fallout:Character:Skills:System.ReadyEvent(Skills:System akSender, var[] a
 EndEvent
 
 
-Event Fallout:Character:Skills:System.ResetEvent(Skills:System akSender, var[] arguments)
+Event Fallout:Skills:System.ResetEvent(Skills:System akSender, var[] arguments)
 	WriteLine(Log, "The client is resetting.")
 	OnSystemReset()
 EndEvent
 
 
-Event Fallout:Character:Skills:System.ShutdownEvent(Skills:System akSender, var[] arguments)
+Event Fallout:Skills:System.ShutdownEvent(Skills:System akSender, var[] arguments)
 	WriteLine(Log, "The client is shutting down.")
 	UnregisterForCustomEvent(akSender, "ReadyEvent")
 	Registered = !akSender.Unregister(self)
@@ -179,7 +173,7 @@ EndStruct
 
 
 Group Properties
-	Project:Context Property Context Auto Const Mandatory
+	Skills:Context Property Context Auto Const Mandatory
 
 	bool Property IsRegistered Hidden
 		bool Function Get()

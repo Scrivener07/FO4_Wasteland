@@ -1,5 +1,5 @@
-Scriptname Fallout:Character:Skills:System extends Quest
-import Fallout:Character
+Scriptname Fallout:Skills:System extends Quest
+import Fallout
 import Papyrus
 import Papyrus:Diagnostics:Log
 import Papyrus:StringType
@@ -11,15 +11,6 @@ CustomEvent ResetEvent
 CustomEvent ShutdownEvent
 
 ClientEntry[] Clients
-
-
-
-; Properties
-;---------------------------------------------
-
-Group Properties
-	Project:Context Property Context Auto Const Mandatory
-EndGroup
 
 
 Struct ClientEntry
@@ -137,3 +128,11 @@ EndFunction
 ClientEntry[] Function GetEntries()
 	return Clients
 EndFunction
+
+
+; Properties
+;---------------------------------------------
+
+Group Properties
+	Project:Context Property Context Auto Const Mandatory
+EndGroup

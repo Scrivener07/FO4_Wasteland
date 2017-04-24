@@ -1,5 +1,5 @@
-Scriptname Fallout:Character:Skills:Data:Unarmed Extends Fallout:Character:Skills:Client
-import Fallout:Character:Skills
+Scriptname Fallout:Skills:Data:Unarmed Extends Fallout:Skills:Client
+import Fallout:Skills
 import Papyrus:Diagnostics:Log
 
 

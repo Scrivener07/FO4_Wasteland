@@ -1,28 +1,14 @@
-Scriptname Fallout:Character:Skills:Display:SkillProgram extends ObjectReference
-import Fallout:Character:Modification
-import Fallout:Character:Skills:System
-import Papyrus
+Scriptname Fallout:Skills:Display:SkillProgram extends ObjectReference
+import Fallout
 import Papyrus:Diagnostics:Log
 
-; http://www.creationkit.com/fallout4/index.php?title=Text_Replacement
-; http://www.creationkit.com/fallout4/index.php?title=AddTextReplacementData_-_ObjectReference
-
-; Variables
-;---------------------------------------------
 UserLog Log
 
 string DataToken = "DataToken" const
 ObjectReference LastTerminal
 
 
-Group Properties
-	Project:Context Property Context Auto Const Mandatory
-	Fallout:Character:Modification Property WCM Auto Const Mandatory ; same ref as context, use instead of context or move skill property
-	Message Property Character_Skill_ProgramMessage Auto Const Mandatory
-EndGroup
-
-
-; Initialize
+; Events
 ;---------------------------------------------
 
 Event OnInit()
@@ -32,9 +18,6 @@ Event OnInit()
 EndEvent
 
 
-; Holotapes
-;---------------------------------------------
-
 Event OnHolotapePlay(ObjectReference akTerminalRef)
 	Writeline(Log, "OnHolotapePlay(akTerminalRef="+akTerminalRef+")")
 
@@ -42,13 +25,12 @@ Event OnHolotapePlay(ObjectReference akTerminalRef)
 		LastTerminal = akTerminalRef
 	EndIf
 
-	string data = DataString(WCM)
+	string data = DataString(Context)
 
 	; I cannot create a string and pass it to AddTextReplacementData. It must use a Form.
-	; As a place holder I am using the Message "Character_Skill_ProgramMessage" in place of "data"
-	LastTerminal.AddTextReplacementData(DataToken, Character_Skill_ProgramMessage)
+	; As a place holder I am using the Message "Fallout_Skills_ProgramMessage" in place of "data"
+	LastTerminal.AddTextReplacementData(DataToken, Fallout_Skills_ProgramMessage)
 EndEvent
-
 
 
 Event OnHolotapeChatter(string asChatter, float afNumericData)
@@ -65,17 +47,17 @@ EndEvent
 ; Data
 ;---------------------------------------------
 
-string Function DataString(Fallout:Character:Modification aWCM)
-	If (aWCM == none)
+string Function DataString(Skills:Context aContext)
+	If (aContext == none)
 		WriteLine(Log, "Could not get an instance for user modification.")
 		return none
 	else
-		ClientEntry[] entries = aWCM.Skills.GetEntries()
+		Skills:System:ClientEntry[] entries = aContext.Skills.GetEntries()
 		string datastring = ""
 
 		int idx = 0
 		While (idx < entries.Length)
-			ClientEntry entry = entries[idx]
+			Skills:System:ClientEntry entry = entries[idx]
 			datastring += entry.Name + "Token|" ; are spaces in name okay?
 
 			idx += 1
@@ -94,3 +76,12 @@ string Function DataString(Fallout:Character:Modification aWCM)
 		return datastring
 	EndIf
 EndFunction
+
+
+; Properties
+;---------------------------------------------
+
+Group Properties
+	Skills:Context Property Context Auto Const Mandatory
+	Message Property Fallout_Skills_ProgramMessage Auto Const Mandatory
+EndGroup

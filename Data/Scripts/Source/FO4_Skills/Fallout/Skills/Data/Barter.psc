@@ -1,5 +1,5 @@
-Scriptname Fallout:Character:Skills:Data:Barter extends Fallout:Character:Skills:Client
-import Fallout:Character:Skills
+Scriptname Fallout:Skills:Data:Barter extends Fallout:Skills:Client
+import Fallout:Skills
 import Papyrus:Diagnostics:Log
 ; http://www.creationkit.com/fallout4/index.php?title=OnSell_-_ObjectReference
 ; http://www.creationkit.com/fallout4/index.php?title=OnPlayerDialogueTarget_-_ObjectReference

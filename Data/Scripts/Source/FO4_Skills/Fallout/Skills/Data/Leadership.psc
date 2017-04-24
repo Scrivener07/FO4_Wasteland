@@ -1,6 +1,5 @@
-Scriptname Fallout:Character:Skills:Data:Leadership extends Fallout:Character:Skills:Client
-import Fallout:Character:Modification
-import Fallout:Character:Skills
+Scriptname Fallout:Skills:Data:Leadership extends Fallout:Skills:Client
+import Fallout:Skills
 import Papyrus:Diagnostics:Log
 
 
@@ -10,6 +9,7 @@ int ExperienceModerate = 25 const
 int ExperienceMajor = 50 const
 
 Group Followers
+	; Quest: Followers
 	ReferenceAlias Property Companion Auto Const
 	ReferenceAlias Property DogmeatCompanion Auto Const
 EndGroup

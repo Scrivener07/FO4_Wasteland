@@ -1,5 +1,5 @@
-Scriptname Fallout:Character:Modification extends Papyrus:Project:Context
-import Fallout:Character:Skills
+Scriptname Fallout:Skills:Context extends Papyrus:Project:Context
+import Fallout
 import Papyrus:Compatibility:External
 import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
@@ -20,7 +20,7 @@ EndEvent
 ;---------------------------------------------
 
 string Function GetTitle()
-	return "Character"
+	return "Character Skills"
 EndFunction
 
 
@@ -46,7 +46,7 @@ EndFunction
 ExternalForm Function Context()
 	ExternalForm value = new ExternalForm
 	value.FormID = 0x00005B9E
-	value.FileName = "Wasteland Character.esp"
+	value.FileName = "Skills.esp"
 	return value
 EndFunction
 
@@ -59,5 +59,5 @@ Group Properties
 EndGroup
 
 Group Components
-	System Property Skills Auto Const Mandatory
+	Skills:System Property Skills Auto Const Mandatory
 EndGroup
