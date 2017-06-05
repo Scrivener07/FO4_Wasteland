@@ -12,10 +12,21 @@ ObjectReference LastTerminal
 ;---------------------------------------------
 
 Event OnInit()
-	Log = new UserLog
-	Log.Caller = self
-	Log.FileName = Context.Title
+	Log = LogNew(Context.Title, self)
 EndEvent
+
+
+; Event OnEnable()
+; 	RegisterForRemoteEvent(Fallout_Skills_Program, "OnHolotapePlay")
+; 	RegisterForRemoteEvent(Fallout_Skills_Program, "OnHolotapeChatter")
+; EndEvent
+
+
+; Event OnDisable()
+; 	UnregisterForRemoteEvent(Fallout_Skills_Program, "OnHolotapePlay")
+; 	UnregisterForRemoteEvent(Fallout_Skills_Program, "OnHolotapeChatter")
+; EndEvent
+
 
 
 Event OnHolotapePlay(ObjectReference akTerminalRef)
@@ -33,7 +44,7 @@ Event OnHolotapePlay(ObjectReference akTerminalRef)
 EndEvent
 
 
-Event OnHolotapeChatter(string asChatter, float afNumericData)
+Event OnHolotapeChatter(string asChatter, float afNumericData )
 	; Event that occurs when a flash program on a holotape wants to communicate with script.
 	Writeline(Log, "________________________")
 	Writeline(Log, "| HOLOTAPE LISTENER")
@@ -44,7 +55,7 @@ Event OnHolotapeChatter(string asChatter, float afNumericData)
 EndEvent
 
 
-; Data
+; Functions
 ;---------------------------------------------
 
 string Function DataString(Skills:Context aContext)
@@ -84,5 +95,6 @@ EndFunction
 Group Properties
 	Skills:Context Property Context Auto Const Mandatory
 	Skills:System Property Skills Auto Const Mandatory
+	Holotape Property Fallout_Skills_Program Auto Const Mandatory
 	Message Property Fallout_Skills_ProgramMessage Auto Const Mandatory
 EndGroup

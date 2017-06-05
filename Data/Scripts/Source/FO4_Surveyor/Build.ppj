@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-	<!-- Scripting Widgets -->
+	<!-- Surveyor -->
 	<!-- http://www.creationkit.com/fallout4/index.php?title=Papyrus_Projects -->
 	<PapyrusProject
 		xmlns="PapyrusProject.xsd"
@@ -13,11 +13,12 @@
 	<Imports>
 		<Import>.</Import>
 		<Import>..\FO4_Scripting</Import>
-		<Import>..\HUD_FRAMEWORK</Import>
-		<Import>..\F4SE</Import>
+		<Import>..\HUD_Framework</Import>
+		<Import>..\Lilac</Import>
 		<Import>..\Base</Import>
 	</Imports>
 	<Folders>
 		<Folder>.</Folder>
+		<Folder>..\FO4_Scripting</Folder>
 	</Folders>
 </PapyrusProject>

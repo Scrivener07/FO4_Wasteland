@@ -20,11 +20,9 @@ EndStruct
 
 ; Events
 ;---------------------------------------------
-Event OnInitialize()
-	Log = new UserLog
-	Log.Caller = self
-	Log.FileName = Context.Title
 
+Event OnInitialize()
+	Log = LogNew(Context.Title, self)
 	Clients = new ClientEntry[0]
 	RegisterForRemoteEvent(Player, "OnPlayerLoadGame")
 EndEvent

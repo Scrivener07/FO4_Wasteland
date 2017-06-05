@@ -1,16 +1,12 @@
 Scriptname Fallout:Skills:Context extends Papyrus:Project:Context
-import Fallout
 import Papyrus:Compatibility:External
-import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
 
-UserLog Log
 
 ; Events
 ;---------------------------------------------
 
 Event OnInitialize()
-	Log = LogNew(Title, self)
 	Required = MQ102
 	RequiredStage = 1
 EndEvent
@@ -57,7 +53,3 @@ EndFunction
 Group Properties
 	Quest Property MQ102 Auto Const Mandatory
 EndGroup
-
-; Group Components
-; 	Skills:System Property Skills Auto Const Mandatory
-; EndGroup

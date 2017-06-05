@@ -1,0 +1,3 @@
+Scriptname MapWidget extends Quest
+
+

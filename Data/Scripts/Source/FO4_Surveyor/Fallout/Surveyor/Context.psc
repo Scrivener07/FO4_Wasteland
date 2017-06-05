@@ -1,6 +1,9 @@
-Scriptname Fallout:Posture:Context extends Papyrus:Project:Context Conditional
+Scriptname Fallout:Surveyor:Context extends Papyrus:Project:Context
 import Papyrus:Compatibility:External
+import Papyrus:Diagnostics:Log
 import Papyrus:VersionType
+
+UserLog Log
 
 
 ; Events
@@ -17,7 +20,7 @@ EndEvent
 ;---------------------------------------------
 
 string Function GetTitle()
-	return "Posture"
+	return "Surveyor"
 EndFunction
 
 
@@ -41,8 +44,8 @@ EndFunction
 
 ExternalForm Function Context()
 	ExternalForm value = new ExternalForm
-	value.FormID = 0x00000F99
-	value.FileName = "Posture.esp"
+	value.FormID = 0x00000800
+	value.FileName = "Surveyor.esp"
 	return value
 EndFunction
 
